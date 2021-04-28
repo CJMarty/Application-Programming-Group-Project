@@ -120,35 +120,35 @@ public class CategoriesController implements EventHandler<ActionEvent> {
 				e.printStackTrace();
 			}
 		}
-		if(event.getSource() == birdsButton) {
+		else if(event.getSource() == birdsButton) {
 			try {
 				ZooDexModel.birdList();
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
 		}
-		if(event.getSource() == amphibiansButton) {
+		else if(event.getSource() == amphibiansButton) {
 			try {
 				ZooDexModel.amphibList();
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
 		}
-		if(event.getSource() == reptilesButton) {
+		else if(event.getSource() == reptilesButton) {
 			try {
 				ZooDexModel.reptList();
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
 		}
-		if(event.getSource() == fishButton) {
+		else if(event.getSource() == fishButton) {
 			try {
 				ZooDexModel.fishList();
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
 		}
-		if(event.getSource() == invertebratesButton) {
+		else if(event.getSource() == invertebratesButton) {
 			try {
 				ZooDexModel.invertList();
 			} catch (FileNotFoundException e) {
