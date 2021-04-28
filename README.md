@@ -26,7 +26,7 @@ N/A
 
 ## Versions/Requirements
 
-- JDK 8/JRE 8
+- JDK 1.8/JRE 1.8
 - External JAR: jfxswt.jar
 - Eclipse 
 JavaFX plugin: https://download.eclipse.org/efxclipse/updates-released/1.2.0/site/ -> http://download.eclipse.org/releases/mars
