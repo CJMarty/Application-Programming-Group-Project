@@ -1,0 +1,162 @@
+/*Main*/
+
+#categoriesButton
+{
+	
+	-fx-background-image:url("graphics/main/buttons/select_category.png");
+	
+	-fx-background-color: transparent;
+	
+}
+
+#categoriesButton:hover
+{
+
+    -fx-background-image:url("graphics/main/buttons/hover/select_category.png");
+
+}
+
+#aboutButton
+{
+	
+	-fx-background-image:url("graphics/main/buttons/about_page.png");
+	
+	-fx-background-color: transparent;
+	
+}
+
+#aboutButton:hover
+{
+
+    -fx-background-image:url("graphics/main/buttons/hover/about_page.png");
+
+}
+
+#sourcesButton
+{
+	
+	-fx-background-image:url("graphics/main/buttons/sources.png");
+	
+	-fx-background-color: transparent;
+	
+}
+
+#sourcesButton:hover
+{
+
+    -fx-background-image:url("graphics/main/buttons/hover/sources.png");
+
+}
+
+/*Categories*/
+
+#backButton
+{
+	
+	-fx-background-image:url("graphics/buttons/back.png");
+	
+	-fx-background-color: transparent;
+	
+}
+#backButton:hover
+{
+	
+	-fx-background-image:url("graphics/buttons/hover/back.png");
+	
+}
+
+#invertebratesButton
+{
+	
+	-fx-background-image:url("graphics/categories/buttons/invertebrates.png");
+	
+	-fx-background-color: transparent;
+	
+}
+
+#invertebratesButton:hover
+{
+
+	-fx-background-image:url("graphics/categories/buttons/hover/invertebrates.png");
+
+}
+
+#fishButton
+{
+	
+	-fx-background-image:url("graphics/categories/buttons/fish.png");
+	
+	-fx-background-color: transparent;
+	
+}
+
+#fishButton:hover
+{
+
+	-fx-background-image:url("graphics/categories/buttons/hover/fish.png");
+
+}
+
+#amphibiansButton
+{
+	
+	-fx-background-image:url("graphics/categories/buttons/amphibians.png");
+	
+	-fx-background-color: transparent;
+	
+}
+
+#amphibiansButton:hover
+{
+
+	-fx-background-image:url("graphics/categories/buttons/hover/amphibians.png");
+
+}
+
+#reptilesButton
+{
+	
+	-fx-background-image:url("graphics/categories/buttons/reptiles.png");
+	
+	-fx-background-color: transparent;
+	
+}
+
+#reptilesButton:hover
+{
+
+	-fx-background-image:url("graphics/categories/buttons/hover/reptiles.png");
+
+}
+
+#birdsButton
+{
+	
+	-fx-background-image:url("graphics/categories/buttons/birds.png");
+	
+	-fx-background-color: transparent;
+	
+}
+
+#birdsButton:hover
+{
+
+	-fx-background-image:url("graphics/categories/buttons/hover/birds.png");
+
+}
+
+#mammalsButton
+{
+	
+	-fx-background-image:url("graphics/categories/buttons/mammals.png");
+	
+	-fx-background-color: transparent;
+	
+}
+
+#mammalsButton:hover
+{
+
+	-fx-background-image:url("graphics/categories/buttons/hover/mammals.png");
+
+}
