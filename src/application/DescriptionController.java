@@ -122,7 +122,7 @@ public class DescriptionController implements EventHandler<ActionEvent> {
 				e.printStackTrace();
 			}
 		}
-		if(event.getSource() == fishDescriptButton) {
+		else if(event.getSource() == fishDescriptButton) {
 			try {
 				ZooDexModel.fishReg();
 				ZooDexModel.fishDescript();
@@ -130,7 +130,7 @@ public class DescriptionController implements EventHandler<ActionEvent> {
 				e.printStackTrace();
 			}
 		}
-		if(event.getSource() == reptDescriptButton) {
+		else if(event.getSource() == reptDescriptButton) {
 			try {
 				ZooDexModel.reptReg();
 				ZooDexModel.reptDescript();
@@ -138,7 +138,7 @@ public class DescriptionController implements EventHandler<ActionEvent> {
 				e.printStackTrace();
 			}
 		}
-		if(event.getSource() == amphibDescriptButton) {
+		else if(event.getSource() == amphibDescriptButton) {
 			try {
 				ZooDexModel.amphibReg();
 				ZooDexModel.amphibDescript();
@@ -146,7 +146,7 @@ public class DescriptionController implements EventHandler<ActionEvent> {
 				e.printStackTrace();
 			}
 		}
-		if(event.getSource() == invertDescriptButton) {
+		else if(event.getSource() == invertDescriptButton) {
 			try {
 				ZooDexModel.invertReg();
 				ZooDexModel.invertDescript();
@@ -154,7 +154,7 @@ public class DescriptionController implements EventHandler<ActionEvent> {
 				e.printStackTrace();
 			}
 		}
-		if(event.getSource() == birdDescriptButton) {
+		else if(event.getSource() == birdDescriptButton) {
 			try {
 				ZooDexModel.birdReg();
 				ZooDexModel.birdDescript();
