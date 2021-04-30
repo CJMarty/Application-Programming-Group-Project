@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddNewAnimalController">
+   <children>
+      <AnchorPane prefHeight="720.0" prefWidth="1280.0">
+         <children>
+            <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/application/graphics/bg.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="backButton" layoutX="1.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="42.0" prefWidth="92.0" stylesheets="@../../bin/application/application.css" />
+            <ListView fx:id="categoriesListView" layoutX="48.0" layoutY="273.0" prefHeight="175.0" prefWidth="341.0" />
+            <Button fx:id="addNewAnimalButton" alignment="CENTER" layoutX="884.0" layoutY="423.0" mnemonicParsing="false" onAction="#addNewAnimal" prefHeight="120.0" prefWidth="145.0" text="Add animal">
+               <font>
+                  <Font name="Arial Bold" size="21.0" />
+               </font></Button>
+            <TextField fx:id="newAnimalName" alignment="CENTER" layoutX="440.0" layoutY="176.0" prefHeight="95.0" prefWidth="400.0" promptText="Enter Animal Name">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="newAnimalRegion" alignment="CENTER" layoutX="440.0" layoutY="313.0" prefHeight="95.0" prefWidth="400.0" promptText="Enter Animal Region">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="newAnimalDescription" alignment="CENTER" layoutX="440.0" layoutY="448.0" prefHeight="95.0" prefWidth="400.0" promptText="Enter Animal Description">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="39.0" layoutY="191.0" prefHeight="65.0" prefWidth="360.0" text="Select an Animal Category" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="28.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="460.0" layoutY="94.0" prefHeight="65.0" prefWidth="360.0" text="Enter Animal Information" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
