@@ -32,6 +32,22 @@
 
 }
 
+#addNewAnimalButton
+{
+	
+	-fx-background-image:url("graphics/main/buttons/add_new_animal.png");
+	
+	-fx-background-color: transparent;
+	
+}
+
+#addNewAnimalButton:hover
+{
+	
+	-fx-background-image:url("graphics/main/buttons/hover/add_new_animal.png");
+	
+}
+
 /*Categories*/
 
 #backButton

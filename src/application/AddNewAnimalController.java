@@ -33,7 +33,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
-import application.model.ZooDexModel;
+import application.ZooDexModel;
 import javafx.event.ActionEvent;
 
 /*

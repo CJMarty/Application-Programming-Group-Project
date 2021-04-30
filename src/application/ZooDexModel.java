@@ -24,11 +24,16 @@ package application;
 //Import Java IO's BufferedReader, File, FileNotFoundException, FileReader, IOException, and
 //Java UTIL's ArrayList.
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 	/////////
 	//Class//
@@ -262,6 +267,7 @@ public class ZooDexModel {
 			for(int i = 0; (name = br.readLine()) != null; i++) {
 				if (i % 3 == 0) {
 					animal.add(name);
+					System.out.println(name);
 					}
 				}
 			return animal;
@@ -359,4 +365,57 @@ public class ZooDexModel {
 			}
 		return null;
 		}
+	
+	public static void addNewAnimal(String newAnimalNameString, String newAnimalRegionString,
+									String newAnimalDescriptionString, String newAnimalCategoryString)
+	{
+		
+		if (newAnimalNameString.equals("") || newAnimalRegionString.equals("") || newAnimalDescriptionString.equals("")
+																			   || newAnimalCategoryString == null) {
+			// Create alert
+			Alert alert = new Alert(AlertType.ERROR);
+
+			// Setting the content of the dialog
+			alert.setContentText("New animal unsuccessfully added. Make sure an animal category is selected and all text fields are filled.");
+
+			// Show the dialog
+			alert.show();
+
+			return;
+
+		}
+
+		try {
+
+			FileWriter fileWriter = new FileWriter(newAnimalCategoryString + ".txt", true);
+
+			BufferedWriter bw = new BufferedWriter(fileWriter);
+
+			bw.write(System.lineSeparator());
+
+			bw.write(newAnimalNameString + System.lineSeparator());
+
+			bw.write(newAnimalRegionString + System.lineSeparator());
+
+			bw.write(newAnimalDescriptionString);
+
+			bw.close();
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		}
+
+		// Create alert
+		Alert alert = new Alert(AlertType.CONFIRMATION);
+
+		// Setting the content of the dialog
+		alert.setContentText("New animal successfully added");
+
+		// Show the dialog
+		alert.show();
+
+	}
+	
 }

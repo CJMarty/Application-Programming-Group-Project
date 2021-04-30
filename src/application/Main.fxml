@@ -22,6 +22,7 @@
                   <Image url="@../../bin/application/graphics/main/zoodex.png" />
                </image>
             </ImageView>
+            <Button fx:id="addNewAnimalButton" layoutX="236.0" layoutY="338.0" mnemonicParsing="false" onAction="#handleAddNewAnimalButton" prefHeight="63.0" prefWidth="472.0" stylesheets="@../../bin/application/application.css" />
          </children>
       </AnchorPane>
    </children>

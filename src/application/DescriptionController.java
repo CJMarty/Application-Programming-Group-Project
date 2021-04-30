@@ -87,6 +87,7 @@ public class DescriptionController implements EventHandler<ActionEvent>, Initial
     
     public ArrayList<String> animals = new ArrayList<String>();
     public String animalType;
+    public int customAnimal;
     
     @FXML
     private ImageView animalImage;
@@ -248,11 +249,28 @@ public class DescriptionController implements EventHandler<ActionEvent>, Initial
 		
 		animalNameLabel.setText((String)(animalsList.getSelectionModel().getSelectedItem()));
 		
-		Image image = new Image(getClass().getResource("graphics\\description\\animals\\" +
-		animalType + "\\" + ((String)(animalsList.getSelectionModel().getSelectedItem())) +
-		".png").toString(), true);
+		Image image = null;
 		
+		try
+		{
+			
+			image = new Image(getClass().getResource("graphics\\description\\animals\\" +
+					animalType + "\\" + ((String)(animalsList.getSelectionModel().getSelectedItem())) +
+					".png").toString(), true);
+			
+		}
+		catch(NullPointerException e)
+		{
+			
+			//Do nothing
+			image = new Image(getClass().getResource("graphics\\description\\animals\\none_selected.png").toString(), true);
+			
+		}
+		
+		if (image != null)
 		animalImage.setImage(image);
+		else
+			System.exit(404);
 		
 			///////////////////////
 			//Animal Region Label//
