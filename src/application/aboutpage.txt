@@ -3,5 +3,5 @@ for the purpose of being an educational resource on that of the animal kingdom. 
 regarding animals within their respected category of many varieties like mammals, fish, birds, invertebrates, reptiles, and amphibians. 
 This program when selecting a specific animal will display factual and general information to be viewed by our users.
 The add feature can be used to further expand the database for further review of information from the curators of this program.
-This information is open to be used by those who wish to learn more about the animal kingdom and its many differeent species as well as 
+This information is open to be used by those who wish to learn more about the animal kingdom and its many different species as well as 
 be a tool for zoologists and the like as a trusted resource for facts on many species that is easily available.
