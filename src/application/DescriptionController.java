@@ -23,15 +23,31 @@ package application;
 
 //Import JavaFX's FXML, button, and model class
 import java.io.FileNotFoundException;
-import application.model.ZooDexModel;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
+
+import application.ZooDexModel;
+import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 /*
  * 		/////////
  * 		//Class//
@@ -40,7 +56,7 @@ import javafx.stage.Stage;
  * TODO: Class description.
  * Created public class 'DescriptionController'.
  */
-public class DescriptionController implements EventHandler<ActionEvent> {
+public class DescriptionController implements EventHandler<ActionEvent>, Initializable{
 	
 	//////////////////////////
 	//FXML Declaration Field//
@@ -65,7 +81,26 @@ public class DescriptionController implements EventHandler<ActionEvent> {
     private Button amphibDescriptButton;
     @FXML
     private Button invertDescriptButton;
-    /*
+    
+    @FXML
+    private ListView animalsList = new ListView();
+    
+    public ArrayList<String> animals = new ArrayList<String>();
+    public String animalType;
+    
+    @FXML
+    private ImageView animalImage;
+    
+    @FXML
+    private Label animalNameLabel = new Label();
+    
+    @FXML
+    private Label animalRegionLabel = new Label();
+    
+    @FXML
+    private Label animalDescriptionLabel = new Label();
+  
+	/*
      * Create method 'handleBackButton', which handles the action to perform when the user presses the
      * back button, with integrated exception handling.
      * - Parent root (Declare and initialize a Parent 'root' to load NeedGive.fxml and the resources therein.)
@@ -78,6 +113,23 @@ public class DescriptionController implements EventHandler<ActionEvent> {
     	Stage window = (Stage) backButton.getScene().getWindow();
     	window.setScene(new Scene(root, 1280, 720));	
     }
+   
+    //Create method 'handleBackCategories', which handles the action to perform when the user presses
+    //the back button a categoried Description.fxml menu, with integrated exception handling.
+    public void handleBackCategories() throws Exception
+    {
+	
+    	//Declare and initialize Parent 'root' to Categories.fxml.
+		Parent root = FXMLLoader.load(getClass().getResource("Categories.fxml"));
+		
+		//Declare and initialize Stage 'window' to the scene of 'backButton'.
+    	Stage window = (Stage) backButton.getScene().getWindow();
+    	
+    	//Use 'window' to setScene(), using 'root' at 1280x720.
+    	window.setScene(new Scene(root, 1280, 720));
+    
+    }
+    
     /*
      * these methods call onto the handle method to set the action of the button
      * when the user clicks on a button, the region and description of the associated animal will show to the user
@@ -163,4 +215,73 @@ public class DescriptionController implements EventHandler<ActionEvent> {
 			}
 		}
 	}
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1)
+	{
+		
+		Platform.runLater(() -> {
+
+			animalsList.getItems().clear();
+			
+			for(String name : animals)
+			{
+				
+				animalsList.getItems().add(name);
+				
+			}
+
+	    });
+		
+	}
+	
+	public void infoGrab() throws FileNotFoundException
+	{
+		
+		int index = animalsList.getSelectionModel().getSelectedIndex();
+		
+			/////////////////////
+			//Animal Name Label//
+			/////////////////////
+		
+		animalNameLabel.setWrapText(true);
+		
+		animalNameLabel.setText((String)(animalsList.getSelectionModel().getSelectedItem()));
+		
+		Image image = new Image(getClass().getResource("graphics\\description\\animals\\" +
+		animalType + "\\" + ((String)(animalsList.getSelectionModel().getSelectedItem())) +
+		".png").toString(), true);
+		
+		animalImage.setImage(image);
+		
+			///////////////////////
+			//Animal Region Label//
+			///////////////////////
+		
+		ArrayList<String> regions = new ArrayList<String>();
+		
+		regions = ZooDexModel.invertReg();
+		
+		String region = regions.get(index);
+		
+		animalRegionLabel.setWrapText(true);
+		
+		animalRegionLabel.setText(region);
+		
+			////////////////////////////
+			//Animal Description Label//
+			////////////////////////////
+		
+		ArrayList<String> descriptions = new ArrayList<String>();
+		
+		descriptions = ZooDexModel.invertDescript();
+		
+		String description = descriptions.get(index);
+		
+		animalDescriptionLabel.setWrapText(true);
+		
+		animalDescriptionLabel.setText(description);
+		
+	}
+	
 }

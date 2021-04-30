@@ -16,12 +16,12 @@
                </image>
             </ImageView>
             <Button fx:id="backButton" layoutX="1.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="42.0" prefWidth="92.0" stylesheets="@../../bin/application/application.css" />
-            <Button fx:id="invertebratesButton" layoutX="76.0" layoutY="72.0" mnemonicParsing="false" prefHeight="272.0" prefWidth="274.0" stylesheets="@../../bin/application/application.css" />
-            <Button fx:id="fishButton" layoutX="511.0" layoutY="72.0" mnemonicParsing="false" prefHeight="272.0" prefWidth="258.0" stylesheets="@../../bin/application/application.css" />
-            <Button fx:id="amphibiansButton" layoutX="938.0" layoutY="72.0" mnemonicParsing="false" prefHeight="281.0" prefWidth="258.0" stylesheets="@../../bin/application/application.css" />
-            <Button fx:id="reptilesButton" layoutX="84.0" layoutY="423.0" mnemonicParsing="false" prefHeight="281.0" prefWidth="258.0" stylesheets="@../../bin/application/application.css" />
-            <Button fx:id="birdsButton" layoutX="511.0" layoutY="423.0" mnemonicParsing="false" prefHeight="272.0" prefWidth="258.0" stylesheets="@../../bin/application/application.css" />
-            <Button fx:id="mammalsButton" layoutX="938.0" layoutY="423.0" mnemonicParsing="false" prefHeight="272.0" prefWidth="258.0" stylesheets="@../../bin/application/application.css" />
+            <Button fx:id="invertebratesButton" layoutX="76.0" layoutY="72.0" mnemonicParsing="false" onAction="#handle" prefHeight="272.0" prefWidth="274.0" stylesheets="@../../bin/application/application.css" />
+            <Button fx:id="fishButton" layoutX="511.0" layoutY="72.0" mnemonicParsing="false" onAction="#handle" prefHeight="272.0" prefWidth="258.0" stylesheets="@../../bin/application/application.css" />
+            <Button fx:id="amphibiansButton" layoutX="938.0" layoutY="72.0" mnemonicParsing="false" onAction="#handle" prefHeight="281.0" prefWidth="258.0" stylesheets="@../../bin/application/application.css" />
+            <Button fx:id="reptilesButton" layoutX="84.0" layoutY="423.0" mnemonicParsing="false" onAction="#handle" prefHeight="281.0" prefWidth="258.0" stylesheets="@../../bin/application/application.css" />
+            <Button fx:id="birdsButton" layoutX="511.0" layoutY="423.0" mnemonicParsing="false" onAction="#handle" prefHeight="272.0" prefWidth="258.0" stylesheets="@../../bin/application/application.css" />
+            <Button fx:id="mammalsButton" layoutX="938.0" layoutY="423.0" mnemonicParsing="false" onAction="#handle" prefHeight="272.0" prefWidth="258.0" stylesheets="@../../bin/application/application.css" />
          </children>
       </AnchorPane>
    </children>

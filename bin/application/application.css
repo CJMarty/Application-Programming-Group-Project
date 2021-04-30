@@ -32,38 +32,6 @@
 
 }
 
-#addNewAnimalButton
-{
-	
-	-fx-background-image:url("graphics/main/buttons/add_new_animal.png");
-	
-	-fx-background-color: transparent;
-	
-}
-
-#addNewAnimalButton:hover
-{
-
-    -fx-background-image:url("graphics/main/buttons/hover/add_new_animal.png");
-
-}
-
-#sourcesButton
-{
-	
-	-fx-background-image:url("graphics/main/buttons/sources.png");
-	
-	-fx-background-color: transparent;
-	
-}
-
-#sourcesButton:hover
-{
-
-    -fx-background-image:url("graphics/main/buttons/hover/sources.png");
-
-}
-
 /*Categories*/
 
 #backButton
@@ -174,5 +142,23 @@
 {
 
 	-fx-background-image:url("graphics/categories/buttons/hover/mammals.png");
+
+}
+
+/*Description*/
+
+#infoButton
+{
+	
+	-fx-background-image:url("graphics/description/buttons/see_information.png");
+	
+	-fx-background-color: transparent;
+	
+}
+
+#infoButton:hover
+{
+
+	-fx-background-image:url("graphics/description/buttons/hover/see_information.png");
 
 }

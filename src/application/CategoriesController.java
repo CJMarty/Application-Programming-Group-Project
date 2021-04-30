@@ -27,9 +27,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.io.FileNotFoundException;
-import application.model.ZooDexModel;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.sun.org.glassfish.gmbal.Description;
+
+import application.ZooDexModel;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 /*
@@ -65,6 +75,8 @@ public class CategoriesController implements EventHandler<ActionEvent> {
     private Button reptilesButton;   
     @FXML
     private Button backButton;
+    
+    private ListView test;
     /*
      * Create method 'handleBackButton', which handles the action to perform when the user presses the
      * back button, with integrated exception handling.
@@ -78,6 +90,7 @@ public class CategoriesController implements EventHandler<ActionEvent> {
     	Stage window = (Stage) backButton.getScene().getWindow();
     	window.setScene(new Scene(root, 1280, 720));
     }
+    
     /*
      * these methods call onto the handle method to set the action of the button
      * when the user clicks on a button, a list of the associated animal will appear to the user
@@ -104,7 +117,7 @@ public class CategoriesController implements EventHandler<ActionEvent> {
     }
     @FXML
     void showInvertebrates(ActionEvent event) {
-    	invertebratesButton.setOnAction(this);  	
+    	invertebratesButton.setOnAction(this);  
     }
     /*
      * the handle method takes care of the setOnAction method associated with each button
@@ -115,43 +128,229 @@ public class CategoriesController implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent event) {
 		if(event.getSource() == mammalsButton) {
 			try {
-				ZooDexModel.mamList();
+				
+				//Instantiate String ArrayList 'animals'.
+				ArrayList<String> animals = new ArrayList<String>();
+				
+				//Initialize 'animals' to the ArrayList returned by invertList().
+				animals = ZooDexModel.mamList();
+		    	
+				//Instantiate FXMLLoader 'loader' to Description.fxml.
+		    	FXMLLoader loader = new FXMLLoader(getClass().getResource("Description.fxml"));
+		    	
+		    	//Declare and initialize Parent 'root' to the Parent-casted load() of 'loader'.
+		    	Parent root = (Parent)loader.load();
+		    	
+		    	//Instantiate DescriptionController 'descriptControl' to the getController() of
+		    	//DescriptionController to 'loader'.
+		    	DescriptionController descriptControl = loader.<DescriptionController>getController();
+		    	
+		    	//Initialize the 'animals' of 'descriptControl' to 'animals'.
+		    	descriptControl.animals = animals;
+		    	
+		    	//Initialize the 'animalType' of 'descriptControl' to "mammals".
+		    	descriptControl.animalType = "mammals";
+		    	
+		    	//Declare and initialize Stage 'window' to the Stage-casted value of the scene of
+		    	//'invertebratesButton'.
+		    	Stage window = (Stage) mammalsButton.getScene().getWindow();
+		    	
+		    	//Display 'window' using 'root' at 1280x720.
+		    	window.setScene(new Scene(root, 1280, 720));
 			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 		else if(event.getSource() == birdsButton) {
 			try {
-				ZooDexModel.birdList();
+				
+				//Instantiate String ArrayList 'animals'.
+				ArrayList<String> animals = new ArrayList<String>();
+				
+				//Initialize 'animals' to the ArrayList returned by invertList().
+				animals = ZooDexModel.birdList();
+		    	
+				//Instantiate FXMLLoader 'loader' to Description.fxml.
+		    	FXMLLoader loader = new FXMLLoader(getClass().getResource("Description.fxml"));
+		    	
+		    	//Declare and initialize Parent 'root' to the Parent-casted load() of 'loader'.
+		    	Parent root = (Parent)loader.load();
+		    	
+		    	//Instantiate DescriptionController 'descriptControl' to the getController() of
+		    	//DescriptionController to 'loader'.
+		    	DescriptionController descriptControl = loader.<DescriptionController>getController();
+		    	
+		    	//Initialize the 'animals' of 'descriptControl' to 'animals'.
+		    	descriptControl.animals = animals;
+		    	
+		    	//Initialize the 'animalType' of 'descriptControl' to "birds".
+		    	descriptControl.animalType = "birds";
+		    	
+		    	//Declare and initialize Stage 'window' to the Stage-casted value of the scene of
+		    	//'invertebratesButton'.
+		    	Stage window = (Stage) birdsButton.getScene().getWindow();
+		    	
+		    	//Display 'window' using 'root' at 1280x720.
+		    	window.setScene(new Scene(root, 1280, 720));
 			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 		else if(event.getSource() == amphibiansButton) {
 			try {
-				ZooDexModel.amphibList();
+				
+				//Instantiate String ArrayList 'animals'.
+				ArrayList<String> animals = new ArrayList<String>();
+				
+				//Initialize 'animals' to the ArrayList returned by invertList().
+				animals = ZooDexModel.amphibList();
+		    	
+				//Instantiate FXMLLoader 'loader' to Description.fxml.
+		    	FXMLLoader loader = new FXMLLoader(getClass().getResource("Description.fxml"));
+		    	
+		    	//Declare and initialize Parent 'root' to the Parent-casted load() of 'loader'.
+		    	Parent root = (Parent)loader.load();
+		    	
+		    	//Instantiate DescriptionController 'descriptControl' to the getController() of
+		    	//DescriptionController to 'loader'.
+		    	DescriptionController descriptControl = loader.<DescriptionController>getController();
+		    	
+		    	//Initialize the 'animals' of 'descriptControl' to 'animals'.
+		    	descriptControl.animals = animals;
+		    	
+		    	//Initialize the 'animalType' of 'descriptControl' to "amphibians".
+		    	descriptControl.animalType = "amphibians";
+		    	
+		    	//Declare and initialize Stage 'window' to the Stage-casted value of the scene of
+		    	//'invertebratesButton'.
+		    	Stage window = (Stage) amphibiansButton.getScene().getWindow();
+		    	
+		    	//Display 'window' using 'root' at 1280x720.
+		    	window.setScene(new Scene(root, 1280, 720));
+		    	
 			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 		else if(event.getSource() == reptilesButton) {
 			try {
-				ZooDexModel.reptList();
+				
+				//Instantiate String ArrayList 'animals'.
+				ArrayList<String> animals = new ArrayList<String>();
+				
+				//Initialize 'animals' to the ArrayList returned by invertList().
+				animals = ZooDexModel.reptList();
+		    	
+				//Instantiate FXMLLoader 'loader' to Description.fxml.
+		    	FXMLLoader loader = new FXMLLoader(getClass().getResource("Description.fxml"));
+		    	
+		    	//Declare and initialize Parent 'root' to the Parent-casted load() of 'loader'.
+		    	Parent root = (Parent)loader.load();
+		    	
+		    	//Instantiate DescriptionController 'descriptControl' to the getController() of
+		    	//DescriptionController to 'loader'.
+		    	DescriptionController descriptControl = loader.<DescriptionController>getController();
+		    	
+		    	//Initialize the 'animals' of 'descriptControl' to 'animals'.
+		    	descriptControl.animals = animals;
+		    	
+		    	//Initialize the 'animalType' of 'descriptControl' to "reptiles".
+		    	descriptControl.animalType = "reptiles";
+		    	
+		    	//Declare and initialize Stage 'window' to the Stage-casted value of the scene of
+		    	//'invertebratesButton'.
+		    	Stage window = (Stage) reptilesButton.getScene().getWindow();
+		    	
+		    	//Display 'window' using 'root' at 1280x720.
+		    	window.setScene(new Scene(root, 1280, 720));
+		    	
 			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 		else if(event.getSource() == fishButton) {
 			try {
-				ZooDexModel.fishList();
+				
+				//Instantiate String ArrayList 'animals'.
+				ArrayList<String> animals = new ArrayList<String>();
+				
+				//Initialize 'animals' to the ArrayList returned by invertList().
+				animals = ZooDexModel.fishList();
+		    	
+				//Instantiate FXMLLoader 'loader' to Description.fxml.
+		    	FXMLLoader loader = new FXMLLoader(getClass().getResource("Description.fxml"));
+		    	
+		    	//Declare and initialize Parent 'root' to the Parent-casted load() of 'loader'.
+		    	Parent root = (Parent)loader.load();
+		    	
+		    	//Instantiate DescriptionController 'descriptControl' to the getController() of
+		    	//DescriptionController to 'loader'.
+		    	DescriptionController descriptControl = loader.<DescriptionController>getController();
+		    	
+		    	//Initialize the 'animals' of 'descriptControl' to 'animals'.
+		    	descriptControl.animals = animals;
+		    	
+		    	//Initialize the 'animalType' of 'descriptControl' to "fish".
+		    	descriptControl.animalType = "fish";
+		    	
+		    	//Declare and initialize Stage 'window' to the Stage-casted value of the scene of
+		    	//'invertebratesButton'.
+		    	Stage window = (Stage) fishButton.getScene().getWindow();
+		    	
+		    	//Display 'window' using 'root' at 1280x720.
+		    	window.setScene(new Scene(root, 1280, 720));
+		    	
 			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		else if(event.getSource() == invertebratesButton) {
 			try {
-				ZooDexModel.invertList();
+				
+				//Instantiate String ArrayList 'animals'.
+				ArrayList<String> animals = new ArrayList<String>();
+				
+				//Initialize 'animals' to the ArrayList returned by invertList().
+				animals = ZooDexModel.invertList();
+		    	
+				//Instantiate FXMLLoader 'loader' to Description.fxml.
+		    	FXMLLoader loader = new FXMLLoader(getClass().getResource("Description.fxml"));
+		    	
+		    	//Declare and initialize Parent 'root' to the Parent-casted load() of 'loader'.
+		    	Parent root = (Parent)loader.load();
+		    	
+		    	//Instantiate DescriptionController 'descriptControl' to the getController() of
+		    	//DescriptionController to 'loader'.
+		    	DescriptionController descriptControl = loader.<DescriptionController>getController();
+		    	
+		    	//Initialize the 'animals' of 'descriptControl' to 'animals'.
+		    	descriptControl.animals = animals;
+		    	
+		    	//Initialize the 'animalType' of 'descriptControl' to "invertebrates".
+		    	descriptControl.animalType = "invertebrates";
+		    	
+		    	//Declare and initialize Stage 'window' to the Stage-casted value of the scene of
+		    	//'invertebratesButton'.
+		    	Stage window = (Stage) invertebratesButton.getScene().getWindow();
+		    	
+		    	//Display 'window' using 'root' at 1280x720.
+		    	window.setScene(new Scene(root, 1280, 720));
+				
 			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
