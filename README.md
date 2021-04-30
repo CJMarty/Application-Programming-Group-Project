@@ -16,6 +16,14 @@ Roland Sanchez
 
 The Zoodex acts as a readily-accessible and lightweight program for providing fast, accurate, and detailed information on a variety of real-world animals — as opposed to its conceptual namesake from Pokémon — as a tool for research, zoologists/biologists, and/or as an educational tool.
 
+## Functionality
+
+The Zoodex's primary functionality is to look through a txt file for each category which displays each animal to the user. The user can select an animal and be shown more detailed information about the animal. This functionality works as intended.
+
+The Zoodex also has the ability for a user to add a new animal. The Zoodex can successfully write the animal to the appropiate file depending on the category of the animal.
+
+All functionality is currently working.
+
 ## Known Bugs
 
 N/A
